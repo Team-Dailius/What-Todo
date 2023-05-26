@@ -1,0 +1,38 @@
+#login-page-width {
+    width: 600px;
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vh;
+}
+
+#What-Todo-logo {
+    font-size: 3.5rem;
+    font-weight: bold;
+
+    background: linear-gradient(#5B8FB9, #B6EADA);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.id-and-password-input {
+    width: 50%;
+    height: 2.5rem;
+    border-radius: 30px;
+    border: none;
+
+    margin-bottom: 0.5rem;
+}
+
+#id-and-password-submit {
+    width: 50%;
+    height: 2.5rem;
+    border-radius: 30px;
+    border: none;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    background-color: #B6EADA;
+}
