@@ -1,0 +1,90 @@
+#page-width {
+    width: 600px;
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vh;
+}
+
+#What-Todo-logo {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+
+    background: linear-gradient(#5B8FB9, #B6EADA);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.id-and-password-input input {
+    width: 50%;
+    height: 2.5rem;
+    border-radius: 30px;
+    border: none;
+
+    margin-bottom: 0.5rem;
+}
+
+#id-and-password-submit {
+    width: 50%;
+    height: 2.5rem;
+    border-radius: 30px;
+    border: none;
+
+    margin-bottom: 1.5rem;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    background-color: #B6EADA;
+}
+
+.id-and-password-find-btn {
+     margin-bottom: 1rem;
+ }
+
+.id-and-password-find-btn button {
+    border: none;
+    background: none;
+
+    color: white;
+
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.social-icon {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+
+    margin: 0 auto;
+}
+
+.social-icon div {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border-radius: 50px;
+}
+
+.social-icon img {
+    position: absolute;
+
+    width: 30px;
+    top: 14px;
+    left: 14px;
+}
+
+#kakao-icon {
+    background: #F8DE0A;
+}
+
+#naver-icon {
+    background: #06BD34;
+}
+
+#google-icon {
+    background: white;
+}
