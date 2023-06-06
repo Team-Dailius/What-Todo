@@ -17,9 +17,12 @@ import java.time.LocalDate;
 @Entity
 public class Goals {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "goalsId")
     private long id;
 
     @ManyToOne
+    @JoinColumn(name = "userId")
     private User userId;
 
     @Column(length = 100)

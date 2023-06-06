@@ -17,13 +17,16 @@ import java.time.LocalDate;
 @Entity
 public class Ddays {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ddayId")
     private long id;
 
     @ManyToOne
+    @JoinColumn(name = "userId")
     private User UserId;
 
     @OneToOne
-    @Column(nullable = false)
+    @JoinColumn(name = "category")
     private Category category;
 
     @Column(length = 100)

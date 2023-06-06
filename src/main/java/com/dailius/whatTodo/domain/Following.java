@@ -12,12 +12,14 @@ import javax.persistence.*;
 public class Following {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "followId")
+    @Column(name = "followingId")
     private long id;
 
     @ManyToOne
+    @JoinColumn(name = "userId")
     private User userId;                // 유저 아이디
 
     @ManyToOne
+    @JoinColumn(name = "followingUserId")
     private User followingUserId;       // 팔로잉하는 계정
 }

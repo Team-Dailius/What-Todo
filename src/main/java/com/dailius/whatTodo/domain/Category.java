@@ -15,9 +15,12 @@ import javax.persistence.*;
 @Entity
 public class Category {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "categoryId")
     private long id;
 
     @ManyToOne
+    @JoinColumn(name = "userId")
     private User userId;
 
     @Column(length = 100)
