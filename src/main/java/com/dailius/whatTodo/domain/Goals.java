@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
@@ -18,9 +18,20 @@ import java.time.LocalDate;
 public class Goals {
     @Id
     private long id;
-    private long userId;
+
+    @ManyToOne
+    private User userId;
+
+    @Column(length = 100)
     private String content;             // 내용
+
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @Column(nullable = false)
     private LocalDate dueDate;          // 마감일
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private SharingRange sharingRange;  // 공개 범위
+
     private boolean isDone;             // 완료 여부
 }

@@ -2,8 +2,7 @@ package com.dailius.whatTodo.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
@@ -12,7 +11,13 @@ import javax.persistence.Id;
 @Entity
 public class Following {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "followId")
     private long id;
-    private long userId;                // 유저 아이디
-    private long followingUserId;       // 팔로잉하는 계정
+
+    @ManyToOne
+    private User userId;                // 유저 아이디
+
+    @ManyToOne
+    private User followingUserId;       // 팔로잉하는 계정
 }

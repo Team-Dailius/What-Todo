@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
@@ -18,9 +18,21 @@ import java.time.LocalDate;
 public class Ddays {
     @Id
     private long id;
-    private long UserId;
-    private int category;
+
+    @ManyToOne
+    private User UserId;
+
+    @OneToOne
+    @Column(nullable = false)
+    private Category category;
+
+    @Column(length = 100)
     private String content;
+
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @Column(nullable = false)
     private LocalDate date;
+
+    @Enumerated(EnumType.STRING)
     private SharingRange sharingRange;
 }

@@ -6,8 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
@@ -17,7 +16,13 @@ import javax.persistence.Id;
 public class Category {
     @Id
     private long id;
-    private long userId;
+
+    @ManyToOne
+    private User userId;
+
+    @Column(length = 100)
     private String content;
+
+    @Enumerated(EnumType.STRING)
     private Color color;
 }
