@@ -1,5 +1,6 @@
 package com.dailius.whatTodo.domain;
 
+import com.dailius.whatTodo.domain.constant.MonthlyOrWeekly;
 import com.dailius.whatTodo.domain.constant.SharingRange;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,6 +36,10 @@ public class Goals {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private SharingRange sharingRange;  // 공개 범위
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private MonthlyOrWeekly monthlyOrWeekly;
 
     private boolean isDone;             // 완료 여부
 }
